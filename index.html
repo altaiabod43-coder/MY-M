@@ -29,23 +29,30 @@
       text-align:center;
       width:100%;
       max-width:500px;
-      padding:20px;
+      min-height:100vh;
+      padding:50px 20px 35px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
     }
 
     .flower{
-      font-size:120px;
+      font-size:110px;
       color:#ff4b2b;
       opacity:0;
-      transform: translateY(150px) scale(0.2);
+      transform: translateY(110px) scale(0.2);
       animation: grow 2s ease forwards;
       filter: drop-shadow(0 0 15px rgba(255,60,30,.5));
+      line-height:1;
+      margin-top:20px;
     }
 
     .stem{
       width:6px;
       height:0;
       background: linear-gradient(#1f2f1f,#0b1318);
-      margin: -10px auto 0;
+      margin: -8px auto 0;
       border-radius:10px;
       animation: stemGrow 2s ease forwards;
     }
@@ -136,11 +143,75 @@
     }
 
     @media (max-width:600px){
-      .flower{ font-size:95px; }
-      .text{ font-size:24px; }
+      body{
+        align-items:center;
+      }
+
+      .scene{
+        padding:70px 16px 30px;
+      }
+
+      .flower{
+        font-size:82px;
+        margin-top:10px;
+        transform: translateY(90px) scale(0.2);
+      }
+
+      .stem{
+        width:5px;
+      }
+
+      @keyframes stemGrow{
+        from{ height:0; }
+        to{ height:120px; }
+      }
+
+      .leaves{
+        width:130px;
+        height:50px;
+      }
+
+      .leaf{
+        width:34px;
+        height:18px;
+      }
+
+      .left{
+        left:22px;
+      }
+
+      .right{
+        right:22px;
+      }
+
+      .text{
+        font-size:22px;
+        margin-top:14px;
+      }
+
       .btn{
-        font-size:16px;
-        padding:12px 24px;
+        font-size:15px;
+        padding:12px 22px;
+        margin-top:18px;
+      }
+    }
+
+    @media (max-width:380px){
+      .scene{
+        padding-top:85px;
+      }
+
+      .flower{
+        font-size:72px;
+      }
+
+      .text{
+        font-size:20px;
+      }
+
+      .btn{
+        font-size:14px;
+        padding:11px 20px;
       }
     }
   </style>
