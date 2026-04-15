@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Love</title>
 
-  <link rel="stylesheet" href="fontawesome-free-7.1.0-web/css/all.css" />
+  <!-- خط جميل -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&display=swap" rel="stylesheet">
 
   <style>
     *{
@@ -17,9 +18,9 @@
     body{
       min-height:100vh;
       overflow:hidden;
-      font-family: Arial, sans-serif;
+      font-family: 'Cairo', sans-serif;
       background:
-        radial-gradient(circle at top, #0b1835 0%, #040915 55%, #01040a 100%);
+        radial-gradient(circle at top, #ff9bb3 0%, #ff5f8a 50%, #ff2e63 100%);
       position:relative;
     }
 
@@ -39,89 +40,68 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      font-size: clamp(28px, 6vw, 60px);
-      color:#ffffff;
+      font-size: clamp(22px, 5vw, 50px);
+      color:white;
       font-weight:bold;
       animation: floatM 4s ease-in-out infinite;
     }
 
-    .m-background span:nth-child(odd){
-      color:#ff6b57;
-    }
-
-    .m-background span:nth-child(3n){
-      animation-duration: 5.5s;
-    }
-
-    .m-background span:nth-child(4n){
-      animation-duration: 6.5s;
-    }
-
-    /* ورود موزعة */
+    /* ورود باستخدام ايموجي */
     .flower{
       position:absolute;
-      color:#ff4b2b;
-      filter: drop-shadow(0 0 10px rgba(255,75,43,.45));
+      font-size:40px;
       z-index:2;
       animation: floatFlower 4s ease-in-out infinite;
     }
 
-    .flower i{
-      font-size: inherit;
-    }
+    .f1{ top:6%; left:8%; }
+    .f2{ top:10%; right:10%; }
+    .f3{ top:24%; left:14%; }
+    .f4{ top:28%; right:12%; }
+    .f5{ bottom:20%; left:10%; }
+    .f6{ bottom:12%; right:11%; }
+    .f7{ bottom:8%; left:22%; }
+    .f8{ top:14%; left:45%; }
+    .f9{ bottom:24%; right:36%; }
 
-    .f1{ top:6%; left:8%; font-size:48px; }
-    .f2{ top:10%; right:10%; font-size:60px; animation-delay:.7s; }
-    .f3{ top:24%; left:14%; font-size:42px; animation-delay:1.2s; }
-    .f4{ top:28%; right:12%; font-size:50px; animation-delay:1.8s; }
-    .f5{ bottom:20%; left:10%; font-size:58px; animation-delay:2.1s; }
-    .f6{ bottom:12%; right:11%; font-size:46px; animation-delay:2.7s; }
-    .f7{ bottom:8%; left:22%; font-size:38px; animation-delay:1.1s; }
-    .f8{ top:14%; left:45%; font-size:36px; animation-delay:1.5s; }
-    .f9{ bottom:24%; right:36%; font-size:44px; animation-delay:2.3s; }
-
-    /* الكلام بالنص */
+    /* صندوق الرسالة */
     .message-box{
       position:absolute;
       top:50%;
       left:50%;
       transform:translate(-50%, -50%);
-      width:min(90%, 700px);
-      padding:30px 24px;
+      width:min(90%, 600px);
+      padding:20px 16px;
       text-align:center;
-      background: rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.12);
-      border-radius:24px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 0 30px rgba(0,0,0,.25);
+      background: rgba(255,255,255,0.15);
+      border-radius:20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0,0,0,.2);
       z-index:3;
-      animation: showBox 1.2s ease;
     }
 
     .title{
-      color:#ff7a59;
-      font-size: clamp(28px, 5vw, 48px);
-      margin-bottom:16px;
-      font-family: cursive;
+      color:#fff;
+      font-size: clamp(22px, 5vw, 32px);
+      margin-bottom:12px;
     }
 
     .message{
       color:white;
-      font-size: clamp(17px, 2.4vw, 24px);
-      line-height:1.9;
+      font-size: clamp(14px, 3.5vw, 18px);
+      line-height:1.8;
     }
 
     .back-btn{
       display:inline-block;
-      margin-top:24px;
-      padding:12px 24px;
-      border-radius:30px;
+      margin-top:18px;
+      padding:10px 20px;
+      border-radius:25px;
       text-decoration:none;
       color:white;
-      background: linear-gradient(45deg, #ff4b2b, #ff7a59);
+      background: linear-gradient(45deg, #ff2e63, #ff6f91);
       font-weight:bold;
-      transition:.25s;
-      box-shadow: 0 0 18px rgba(255,75,43,.35);
+      transition:.3s;
     }
 
     .back-btn:hover{
@@ -129,88 +109,64 @@
     }
 
     @keyframes floatFlower{
-      0%,100%{
-        transform:translateY(0);
-      }
-      50%{
-        transform:translateY(-10px);
-      }
+      0%,100%{ transform:translateY(0); }
+      50%{ transform:translateY(-8px); }
     }
 
     @keyframes floatM{
-      0%,100%{
-        transform:translateY(0);
-      }
-      50%{
-        transform:translateY(-8px);
-      }
+      0%,100%{ transform:translateY(0); }
+      50%{ transform:translateY(-6px); }
     }
 
-    @keyframes showBox{
-      from{
-        opacity:0;
-        transform:translate(-50%, -45%) scale(.9);
-      }
-      to{
-        opacity:1;
-        transform:translate(-50%, -50%) scale(1);
-      }
-    }
-
+    /* موبايل */
     @media (max-width:600px){
-      .message-box{
-        padding:22px 16px;
+      .flower{
+        font-size:28px;
       }
 
-      .f1,.f2,.f3,.f4,.f5,.f6,.f7,.f8,.f9{
-        font-size:34px !important;
+      .message{
+        font-size:15px;
+      }
+
+      .title{
+        font-size:22px;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- حرف M -->
   <div class="m-background">
-    <span>M</span><span>M</span><span>M</span><span>M</span><span>M</span><span>M</span>
-    <span>M</span><span>M</span><span>M</span><span>M</span><span>M</span><span>M</span>
-    <span>M</span><span>M</span><span>M</span><span>M</span><span>M</span><span>M</span>
-    <span>M</span><span>M</span><span>M</span><span>M</span><span>M</span><span>M</span>
     <span>M</span><span>M</span><span>M</span><span>M</span><span>M</span><span>M</span>
     <span>M</span><span>M</span><span>M</span><span>M</span><span>M</span><span>M</span>
     <span>M</span><span>M</span><span>M</span><span>M</span><span>M</span><span>M</span>
     <span>M</span><span>M</span><span>M</span><span>M</span><span>M</span><span>M</span>
   </div>
 
-  <div class="flower f1"><i class="fa-solid fa-spa"></i></div>
-  <div class="flower f2"><i class="fa-solid fa-spa"></i></div>
-  <div class="flower f3"><i class="fa-solid fa-spa"></i></div>
-  <div class="flower f4"><i class="fa-solid fa-spa"></i></div>
-  <div class="flower f5"><i class="fa-solid fa-spa"></i></div>
-  <div class="flower f6"><i class="fa-solid fa-spa"></i></div>
-  <div class="flower f7"><i class="fa-solid fa-spa"></i></div>
-  <div class="flower f8"><i class="fa-solid fa-spa"></i></div>
-  <div class="flower f9"><i class="fa-solid fa-spa"></i></div>
+  <!-- ورود -->
+  <div class="flower f1">🌸</div>
+  <div class="flower f2">🌹</div>
+  <div class="flower f3">🌸</div>
+  <div class="flower f4">🌹</div>
+  <div class="flower f5">🌸</div>
+  <div class="flower f6">🌹</div>
+  <div class="flower f7">🌸</div>
+  <div class="flower f8">🌹</div>
+  <div class="flower f9">🌸</div>
 
+  <!-- الرسالة -->
   <div class="message-box">
-    <div class="title">🥹 لأحلا ميمي</div>
+    <div class="title">🥹 لأحلا ميمي ❤️</div>
+
     <div class="message">
-      بهذا الكلام الحلو حبيت اوضح انتِ شنو بحياتي<br>
-      اول شي احب اكولة انتِ سندي بهل حيات وهذا شي معروف بيننا <br>
-      واحب همين اكلج انو انتِ دائما تذكريني بماما ودائما تسانديني<br>
+      بهذا الكلام الحلو حبيت اوضح انتِ شنو بحياتي 💖<br>
+      انتِ سندي وقلبي وكلشي بحياتي 🌸<br><br>
 
-      ومهما صار لي مهما مريت بضروف صعبة اتذكر انتِ وياي وابتسم واكول يا حضي بيهة<br>
-      تذكريني دائماً باغنية حسام الرسام من يكول <br>
-      يمكن ابعد عنك اني يجوز مرة ازعل عليك حتة من ازعل حبيبي ما اعوفك روحي بيك<br>
+      مهما يصير بينا، انتِ تبقين احلى شي بحياتي 💕<br>
+      واني ما اكدر بدونج ابد 🥺<br><br>
 
-
-      يمكن مرات هواي تصير بيننا مشاكل اني شخص هادئ ومو من نوع الي يحب مشاكل<br>
-      واني بسبب مشاكل خسرت ناس صدك جنت احبهم واخاف اخسرج بيبب مشكلة تافهة بيننا<br>
-      واني من اكول لمن نتزاعل لا تعوفيني وتروحين اني اخاف ما اكدر اضل وحدي
-      اني خسرت ناس هيج راحو من تزاعنة وبعد ما رجعو واني هواي اخاف من هل شي
-      اريد تعرفين دائما انو اني ما عندي سند غيرد ف لا تعوفيني وحدي اني احبج
-      وهمين اختم كلامي باحلا كلمات اكولهة اكلج
-      ام المشاكل , وكيحة , ام البلاوي , ام المصايب , حيواتنييي , احبج هوايي
-      احب كلشي بت شانا
+      احبج هوايي ❤️🌹
     </div>
 
     <a href="index.html" class="back-btn">😒 كافي خلصنة</a>
