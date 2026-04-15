@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>For You</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     *{
@@ -18,9 +19,9 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      background: radial-gradient(circle at top, #07142c, #01040a);
+      background: radial-gradient(circle at top, #ffb3c7, #ff6f91, #ff3d71);
       overflow:hidden;
-      font-family: Arial, sans-serif;
+      font-family: 'Cairo', sans-serif;
     }
 
     .scene{
@@ -38,19 +39,18 @@
 
     .flower{
       font-size:110px;
-      color:#ff4b2b;
       opacity:0;
       transform: translateY(110px) scale(0.2);
       animation: grow 2s ease forwards;
-      filter: drop-shadow(0 0 15px rgba(255,60,30,.5));
       line-height:1;
       margin-top:20px;
+      text-shadow: 0 0 20px rgba(255,255,255,.25);
     }
 
     .stem{
       width:6px;
       height:0;
-      background: linear-gradient(#1f2f1f,#0b1318);
+      background: linear-gradient(#4d7c35, #1e2d18);
       margin: -8px auto 0;
       border-radius:10px;
       animation: stemGrow 2s ease forwards;
@@ -66,7 +66,7 @@
     .leaf{
       width:42px;
       height:22px;
-      background: linear-gradient(#6fa83a,#2c4719);
+      background: linear-gradient(#8ccf52, #3c6b22);
       position:absolute;
       border-radius:100px 0;
       opacity:0;
@@ -87,10 +87,11 @@
 
     .text{
       color:white;
-      font-size:30px;
+      font-size:28px;
       margin-top:18px;
       opacity:0;
       animation: fade 1s ease 2.3s forwards;
+      text-shadow: 0 2px 8px rgba(0,0,0,.15);
     }
 
     .btn{
@@ -100,10 +101,10 @@
       border-radius:30px;
       text-decoration:none;
       color:white;
-      background: linear-gradient(45deg, #ff4b2b, #ff7a59);
+      background: linear-gradient(45deg, #ff4d79, #ff87a5);
       font-size:18px;
-      font-weight:bold;
-      box-shadow: 0 0 20px rgba(255,75,43,.35);
+      font-weight:700;
+      box-shadow: 0 0 20px rgba(255,75,120,.35);
       opacity:0;
       animation: fade 1s ease 2.8s forwards;
       transition: 0.25s;
@@ -111,7 +112,7 @@
 
     .btn:hover{
       transform: scale(1.05);
-      box-shadow: 0 0 28px rgba(255,75,43,.55);
+      box-shadow: 0 0 28px rgba(255,75,120,.55);
     }
 
     @keyframes grow{
@@ -142,10 +143,6 @@
     }
 
     @media (max-width:600px){
-      body{
-        align-items:center;
-      }
-
       .scene{
         padding:70px 16px 30px;
       }
@@ -184,7 +181,7 @@
       }
 
       .text{
-        font-size:22px;
+        font-size:20px;
         margin-top:14px;
       }
 
@@ -205,7 +202,7 @@
       }
 
       .text{
-        font-size:20px;
+        font-size:18px;
       }
 
       .btn{
@@ -218,11 +215,7 @@
 <body>
 
   <div class="scene">
-    <div class="flower">
-      <div class="flower">
-  🌸
-</div>
-    </div>
+    <div class="flower">🌸</div>
 
     <div class="stem"></div>
 
