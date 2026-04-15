@@ -16,103 +16,134 @@
 
     body{
       min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background: radial-gradient(circle at top, #ffb3c7, #ff6f91, #ff3d71);
+      background: radial-gradient(circle at top, #f7a0b8, #f46f96, #ef5b88);
       overflow:hidden;
-      font-family: 'Cairo', sans-serif;
+      font-family:'Cairo', sans-serif;
+      position:relative;
     }
+
+    .m-background{
+      position:absolute;
+      inset:0;
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      grid-template-rows:repeat(5, 1fr);
+      opacity:.10;
+      z-index:0;
+      pointer-events:none;
+    }
+
+    .m-background span{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:54px;
+      color:#fff;
+      font-weight:700;
+    }
+
+    .flower-bg{
+      position:absolute;
+      font-size:30px;
+      opacity:.75;
+      z-index:0;
+      animation: float 4s ease-in-out infinite;
+      pointer-events:none;
+    }
+
+    .f1{ top:8%; left:10%; }
+    .f2{ top:18%; right:10%; animation-delay:.6s; }
+    .f3{ bottom:22%; left:12%; animation-delay:1.2s; }
+    .f4{ bottom:16%; right:11%; animation-delay:1.8s; }
 
     .scene{
       position:relative;
-      text-align:center;
+      z-index:2;
       width:100%;
-      max-width:500px;
       min-height:100vh;
-      padding:50px 20px 35px;
       display:flex;
       flex-direction:column;
-      justify-content:center;
       align-items:center;
+      justify-content:flex-start;
+      padding-top: 250px; /* هذا هو اللي نزل الوردة فعليًا */
+      text-align:center;
     }
 
     .flower{
-      font-size:110px;
-      opacity:0;
-      transform: translateY(110px) scale(0.2);
-      animation: grow 2s ease forwards;
+      font-size:95px;
       line-height:1;
-      margin-top:20px;
-      text-shadow: 0 0 20px rgba(255,255,255,.25);
+      opacity:0;
+      transform: translateY(90px) scale(.2);
+      animation: grow 1.8s ease forwards;
+      text-shadow: 0 0 18px rgba(255,255,255,.25);
     }
 
     .stem{
-      width:6px;
+      width:8px;
       height:0;
-      background: linear-gradient(#4d7c35, #1e2d18);
-      margin: -8px auto 0;
-      border-radius:10px;
-      animation: stemGrow 2s ease forwards;
+      margin-top:-10px;
+      background: linear-gradient(#4d8a31, #1f4015);
+      border-radius:20px;
+      animation: stemGrow 1.8s ease forwards;
     }
 
     .leaves{
       position:relative;
-      width:160px;
-      height:60px;
-      margin:0 auto;
+      width:180px;
+      height:70px;
+      margin-top:-24px;
     }
 
     .leaf{
-      width:42px;
-      height:22px;
-      background: linear-gradient(#8ccf52, #3c6b22);
       position:absolute;
+      width:46px;
+      height:24px;
+      background: linear-gradient(#7fd14f, #3e8b28);
       border-radius:100px 0;
       opacity:0;
-      top:8px;
+      top:10px;
     }
 
     .left{
-      left:28px;
-      transform: rotate(-30deg);
-      animation: leafShow .8s ease 1.5s forwards;
+      left:22px;
+      transform:rotate(-32deg);
+      animation: leafShow .8s ease 1.2s forwards;
     }
 
     .right{
-      right:28px;
-      transform: rotate(30deg) scaleX(-1);
-      animation: leafShow .8s ease 1.7s forwards;
+      right:22px;
+      transform:rotate(32deg) scaleX(-1);
+      animation: leafShow .8s ease 1.4s forwards;
     }
 
     .text{
-      color:white;
-      font-size:28px;
-      margin-top:18px;
+      margin-top:34px;
+      color:#fff;
+      font-size:26px;
+      font-weight:700;
       opacity:0;
-      animation: fade 1s ease 2.3s forwards;
-      text-shadow: 0 2px 8px rgba(0,0,0,.15);
+      animation: fade .9s ease 1.9s forwards;
+      text-shadow:0 2px 8px rgba(0,0,0,.12);
     }
 
     .btn{
       display:inline-block;
-      margin-top:22px;
-      padding:14px 28px;
+      margin-top:18px;
+      padding:12px 26px;
       border-radius:30px;
       text-decoration:none;
-      color:white;
-      background: linear-gradient(45deg, #ff4d79, #ff87a5);
+      color:#fff;
+      background: linear-gradient(45deg, #ff4f7b, #ff8eac);
       font-size:18px;
       font-weight:700;
-      box-shadow: 0 0 20px rgba(255,75,120,.35);
+      box-shadow:0 0 18px rgba(255,75,120,.35);
       opacity:0;
-      animation: fade 1s ease 2.8s forwards;
-      transition: 0.25s;
+      animation: fade .9s ease 2.3s forwards;
+      transition:.25s;
     }
 
     .btn:hover{
-      transform: scale(1.05);
-      box-shadow: 0 0 28px rgba(255,75,120,.55);
+      transform:scale(1.05);
     }
 
     @keyframes grow{
@@ -124,7 +155,7 @@
 
     @keyframes stemGrow{
       from{ height:0; }
-      to{ height:150px; }
+      to{ height:230px; }
     }
 
     @keyframes leafShow{
@@ -134,7 +165,7 @@
     @keyframes fade{
       from{
         opacity:0;
-        transform:translateY(12px);
+        transform:translateY(10px);
       }
       to{
         opacity:1;
@@ -142,63 +173,65 @@
       }
     }
 
+    @keyframes float{
+      0%,100%{ transform:translateY(0); }
+      50%{ transform:translateY(-10px); }
+    }
+
     @media (max-width:600px){
       .scene{
-        padding:70px 16px 30px;
+        padding-top:115px;
+      }
+
+      .m-background span{
+        font-size:40px;
       }
 
       .flower{
-        font-size:82px;
-        margin-top:10px;
-        transform: translateY(90px) scale(0.2);
+        font-size:78px;
       }
 
       .stem{
-        width:5px;
+        width:7px;
       }
 
       @keyframes stemGrow{
         from{ height:0; }
-        to{ height:120px; }
+        to{ height:190px; }
       }
 
       .leaves{
-        width:130px;
-        height:50px;
+        width:145px;
+        height:60px;
       }
 
       .leaf{
-        width:34px;
-        height:18px;
-      }
-
-      .left{
-        left:22px;
-      }
-
-      .right{
-        right:22px;
+        width:38px;
+        height:20px;
       }
 
       .text{
         font-size:20px;
-        margin-top:14px;
+        margin-top:26px;
       }
 
       .btn{
         font-size:15px;
-        padding:12px 22px;
-        margin-top:18px;
+        padding:11px 22px;
+      }
+
+      .flower-bg{
+        font-size:24px;
       }
     }
 
     @media (max-width:380px){
       .scene{
-        padding-top:85px;
+        padding-top:105px;
       }
 
       .flower{
-        font-size:72px;
+        font-size:70px;
       }
 
       .text{
@@ -207,12 +240,24 @@
 
       .btn{
         font-size:14px;
-        padding:11px 20px;
       }
     }
   </style>
 </head>
 <body>
+
+  <div class="m-background">
+    <span>M</span><span>M</span><span>M</span><span>M</span>
+    <span>M</span><span>M</span><span>M</span><span>M</span>
+    <span>M</span><span>M</span><span>M</span><span>M</span>
+    <span>M</span><span>M</span><span>M</span><span>M</span>
+    <span>M</span><span>M</span><span>M</span><span>M</span>
+  </div>
+
+  <div class="flower-bg f1">🌸</div>
+  <div class="flower-bg f2">🌹</div>
+  <div class="flower-bg f3">🌸</div>
+  <div class="flower-bg f4">🌹</div>
 
   <div class="scene">
     <div class="flower">🌸</div>
