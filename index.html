@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You</title>
+
+  <link rel="stylesheet" href="fontawesome-free-7.1.0-web/css/all.css" />
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: radial-gradient(circle at top, #07142c, #01040a);
+      overflow:hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .scene{
+      position:relative;
+      text-align:center;
+      width:100%;
+      max-width:500px;
+      padding:20px;
+    }
+
+    .flower{
+      font-size:120px;
+      color:#ff4b2b;
+      opacity:0;
+      transform: translateY(150px) scale(0.2);
+      animation: grow 2s ease forwards;
+      filter: drop-shadow(0 0 15px rgba(255,60,30,.5));
+    }
+
+    .stem{
+      width:6px;
+      height:0;
+      background: linear-gradient(#1f2f1f,#0b1318);
+      margin: -10px auto 0;
+      border-radius:10px;
+      animation: stemGrow 2s ease forwards;
+    }
+
+    .leaves{
+      position:relative;
+      width:160px;
+      height:60px;
+      margin:0 auto;
+    }
+
+    .leaf{
+      width:42px;
+      height:22px;
+      background: linear-gradient(#6fa83a,#2c4719);
+      position:absolute;
+      border-radius:100px 0;
+      opacity:0;
+      top:8px;
+    }
+
+    .left{
+      left:28px;
+      transform: rotate(-30deg);
+      animation: leafShow .8s ease 1.5s forwards;
+    }
+
+    .right{
+      right:28px;
+      transform: rotate(30deg) scaleX(-1);
+      animation: leafShow .8s ease 1.7s forwards;
+    }
+
+    .text{
+      color:white;
+      font-size:30px;
+      margin-top:18px;
+      opacity:0;
+      animation: fade 1s ease 2.3s forwards;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:22px;
+      padding:14px 28px;
+      border-radius:30px;
+      text-decoration:none;
+      color:white;
+      background: linear-gradient(45deg, #ff4b2b, #ff7a59);
+      font-size:18px;
+      font-weight:bold;
+      box-shadow: 0 0 20px rgba(255,75,43,.35);
+      opacity:0;
+      animation: fade 1s ease 2.8s forwards;
+      transition: 0.25s;
+    }
+
+    .btn:hover{
+      transform: scale(1.05);
+      box-shadow: 0 0 28px rgba(255,75,43,.55);
+    }
+
+    @keyframes grow{
+      to{
+        opacity:1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes stemGrow{
+      from{ height:0; }
+      to{ height:150px; }
+    }
+
+    @keyframes leafShow{
+      to{ opacity:1; }
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(12px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media (max-width:600px){
+      .flower{ font-size:95px; }
+      .text{ font-size:24px; }
+      .btn{
+        font-size:16px;
+        padding:12px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scene">
+    <div class="flower">
+      <i class="fa-solid fa-spa"></i>
+    </div>
+
+    <div class="stem"></div>
+
+    <div class="leaves">
+      <div class="leaf left"></div>
+      <div class="leaf right"></div>
+    </div>
+
+    <div class="text">❤️ لأحلا ميمي</div>
+
+    <a href="second.html" class="btn">🌹 أفتحيي</a>
+  </div>
+
+</body>
+</html>
